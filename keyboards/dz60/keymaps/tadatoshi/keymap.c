@@ -21,6 +21,11 @@
 #define KC_MD60 MO(DZ60)
 #define KC_LNAV LT(NAVI, KC_SPC)
 
+#define KC_LATB LALT(KC_TAB)
+#define KC_SATB S(LALT(KC_TAB))
+#define KC_SCTB S(LCTL(KC_TAB))
+#define KC_LCTB LCTL(KC_TAB)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* ,-----------------------------------------------------------.
@@ -77,12 +82,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-----------------------------------------------------------'
      */
 
-  [NAVI] = KEYMAP_T(
-         KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12, KC_INS, KC_DEL,
-         xxxx,    KC_WH_L, KC_MS_U, KC_WH_R, KC_WH_U, xxxx,  xxxx,    KC_HOME, KC_PGUP, KC_END,  xxxx,    xxxx,   xxxx,   xxxx,
-         xxxx,    KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D, xxxx,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_WBAK, KC_WFWD,xxxx,
-         KC_BTN5, KC_BTN4, KC_BTN3, KC_BTN2, KC_BTN1, xxxx,  LALT(KC_TAB), S(LALT(KC_TAB)), KC_PGDN, S(LCTL(KC_TAB)), LCTL(KC_TAB),xxxx,xxxx,
-         xxxx,    xxxx,    xxxx,    xxxx,    xxxx,    xxxx,  xxxx,    xxxx,    xxxx,    xxxx),
+  [NAVI] = KC_KEYMAP_T(
+         ESC , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , DEL ,
+         xxxx, WH_L, MS_U, WH_R, WH_U, xxxx, xxxx, HOME, PGUP, END , xxxx, xxxx, xxxx, xxxx,
+         xxxx, MS_L, MS_D, MS_R, WH_D, xxxx, LEFT, DOWN, UP  , RGHT, WBAK, WFWD, xxxx,
+         BTN5, BTN4, BTN3, BTN2, BTN1, xxxx, LATB, SATB, PGDN, SCTB, LCTB, xxxx, xxxx,
+         xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx),
 
     /* ,-----------------------------------------------------------.
      * |  `| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Bsp|
