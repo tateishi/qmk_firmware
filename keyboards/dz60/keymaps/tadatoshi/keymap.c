@@ -15,6 +15,23 @@
 #define KC_____ KC_TRNS
 #define KC_xxxx KC_NO
 
+#define KC_RST  RESET
+
+#define KC_RTOG RGB_TOG
+#define KC_RMOD RGB_MOD
+#define KC_RHUI RGB_HUI
+#define KC_RHUD RGB_HUD
+#define KC_RSAI RGB_SAI
+#define KC_RSAD RGB_SAD
+#define KC_RVAI RGB_VAI
+#define KC_RVAD RGB_VAD
+#define KC_RM_P RGB_M_P
+
+#define KC_BDEC BL_DEC
+#define KC_BTOG BL_TOGG
+#define KC_BINC BL_INC
+#define KC_BSTP BL_STEP
+
 #define KC_SESC F(0)
 #define KC_MHKB MO(HHKB)
 #define KC_MMCR MO(MACR)
@@ -102,12 +119,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-----------------------------------------------------------'
      */
 
-    [DZ60] = KEYMAP_T(
-           KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12, KC_INS, KC_BSPC,
-           ____,    RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, ____,    ____,    KC_UP,   ____,   RESET,
-           ____,    ____,    RGB_M_P, ____,    ____,    ____,    ____,    ____,    KC_HOME, KC_PGUP, KC_LEFT, KC_RGHT, ____,
-           ____,    ____,    ____,    BL_DEC,  BL_TOGG, BL_INC,  BL_STEP, ____,    KC_END,  KC_PGDN, KC_DOWN, ____,   ____,
-           ____,    ____,    ____,    ____,    ____,    ____,    ____,    ____,    ____,    ____),
+    [DZ60] = KC_KEYMAP_T(
+           ESC , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , BSPC,
+           ____, RTOG, RMOD, RHUI, RHUD, RSAI, RSAD, RVAI, RVAD, ____, ____, UP  , ____, RST ,
+           ____,    ____,    RM_P, ____, ____, ____, ____, ____, HOME, PGUP, LEFT, RGHT, ____,
+           ____,    ____,    ____, BDEC, BTOG, BINC, BSTP, ____, END , PGDN, DOWN, ____, ____,
+           ____,    ____,    ____, ____, ____, ____, ____, ____, ____, ____),
 
     /* ,-----------------------------------------------------------.
      * |   |M01|M02|M03|M04|M05|M06|M07|M08|M09|M10|M11|M12|   |   |
