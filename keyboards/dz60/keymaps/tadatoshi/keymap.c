@@ -85,12 +85,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-----------------------------------------------------------'
      */
 
-  [HHKB] = KEYMAP_T(
-         KC_PWR,  KC_F1,   KC_F2,   KC_F3,   KC_F4, KC_F5, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12, KC_INS, KC_DEL,
-         KC_CAPS, xxxx,    xxxx,    xxxx,    xxxx,  xxxx,  xxxx,    xxxx,    KC_PSCR, KC_SLCK, KC_PAUS, KC_UP,   xxxx,   KC_BSPC,
-         xxxx,    KC_VOLD, KC_VOLU, KC_MUTE, xxxx,  xxxx,  KC_PAST, KC_PSLS, KC_HOME, KC_PGUP, KC_LEFT, KC_RGHT, KC_PENT,
-         xxxx,    xxxx,    xxxx,    xxxx,    xxxx,  xxxx,  KC_PPLS, KC_PMNS, KC_END,  KC_PGDN, KC_DOWN, xxxx,    xxxx,
-         xxxx,    xxxx,    xxxx,    xxxx,    xxxx,  xxxx,  xxxx,    xxxx,    xxxx,    xxxx),
+  [HHKB] = KC_KEYMAP_T(
+         PWR , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , DEL ,
+         CAPS, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, PSCR, SLCK, PAUS, UP  , xxxx, BSPC,
+         xxxx, VOLD, VOLU, MUTE, xxxx, xxxx, PAST, PSLS, HOME, PGUP, LEFT, RGHT, PENT,
+         xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, PPLS, PMNS, END , PGDN, DOWN, xxxx, xxxx,
+         xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx),
 
     /* Layer NAVI: NAVI mode (Center Fn) */
     /* ,-----------------------------------------------------------.
