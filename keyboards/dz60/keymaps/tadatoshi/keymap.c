@@ -11,6 +11,15 @@
 #define ____ KC_TRNS
 #define xxxx KC_NO
 
+#define KC_____ KC_TRNS
+#define KC_xxxx KC_NO
+
+#define KC_SESC F(0)
+#define KC_MHKB MO(HHKB)
+#define KC_MMCR MO(MACR)
+#define KC_MD60 MO(DZ60)
+#define KC_LNAV LT(NAVI, KC_SPC)
+
 #define KEYMAP_T( \
           K000, K001, K002, K003, K004, K005, K006, K007, K008, K009, K010, K011, K012, K013, K014, \
           K100,       K102, K103, K104, K105, K106, K107, K108, K109, K110, K111, K112, K113, K114, \
@@ -24,6 +33,22 @@
         { K300, xxxx, K302, K303, K304, K305, K306, K307, K308, K309, K310, K311, xxxx, K313, K314 }, \
         { K400, K401, xxxx, K403, K404, xxxx, K406, xxxx, K408, xxxx, K410, K411, xxxx, K413, K414 }  \
 }
+
+// Used to create a keymap using only KC_ prefixed keys
+#define KC_KEYMAP_T( \
+             K000, K001, K002, K003, K004, K005, K006, K007, K008, K009, K010, K011, K012, K013, K014, \
+             K100,       K102, K103, K104, K105, K106, K107, K108, K109, K110, K111, K112, K113, K114, \
+             K200,       K202, K203, K204, K205, K206, K207, K208, K209, K210, K211, K212, K213, \
+             K300,       K302, K303, K304, K305, K306, K307, K308, K309, K310, K311,       K313, K314, \
+             K400, K401,       K403, K404,       K406,       K408,       K410, K411,       K413, K414 \
+    ) \
+    KEYMAP_T( \
+             KC_##K000, KC_##K001, KC_##K002, KC_##K003, KC_##K004, KC_##K005, KC_##K006, KC_##K007, KC_##K008, KC_##K009, KC_##K010, KC_##K011, KC_##K012, KC_##K013, KC_##K014, \
+             KC_##K100,       KC_##K102, KC_##K103, KC_##K104, KC_##K105, KC_##K106, KC_##K107, KC_##K108, KC_##K109, KC_##K110, KC_##K111, KC_##K112, KC_##K113, KC_##K114, \
+             KC_##K200,       KC_##K202, KC_##K203, KC_##K204, KC_##K205, KC_##K206, KC_##K207, KC_##K208, KC_##K209, KC_##K210, KC_##K211, KC_##K212, KC_##K213, \
+             KC_##K300,       KC_##K302, KC_##K303, KC_##K304, KC_##K305, KC_##K306, KC_##K307, KC_##K308, KC_##K309, KC_##K310, KC_##K311,       KC_##K313, KC_##K314, \
+             KC_##K400, KC_##K401,       KC_##K403, KC_##K404,       KC_##K406,       KC_##K408,       KC_##K410, KC_##K411,       KC_##K413, KC_##K414 \
+              )
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -39,14 +64,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |FN  |Gui |Alt  |BackSP |FN |Space      |Alt |Gui |FN  |CTRL|
      * `-----------------------------------------------------------'
      */
-
-    [BASE] = KEYMAP_T(
-           F(0),    KC_1,    KC_2,    KC_3,    KC_4,     KC_5,   KC_6,    KC_7,  KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSLS, KC_GRV,
-           KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,     KC_T,   KC_Y,    KC_U,  KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSPC,
-           KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,     KC_G,   KC_H,    KC_J,  KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT,
-           KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,     KC_B,   KC_N,    KC_M,  KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, MO(HHKB),
-           KC_LCTL, KC_LGUI, KC_LALT, KC_BSPC, LT(NAVI,KC_SPC), KC_SPC, KC_RALT, MO(MACR), MO(DZ60),   KC_RCTL),
-
+    [BASE] = KC_KEYMAP_T(
+           SESC,  1  ,  2  ,  3  ,  4  ,  5  ,  6  ,  7  ,  8  ,  9  ,  0  , MINS, EQL , BSLS, GRV ,
+           TAB ,  Q  ,  W  ,  E  ,  R  ,  T  ,  Y  ,  U  ,  I  ,  O  ,  P  , LBRC, RBRC, BSPC,
+           LCTL,  A  ,  S  ,  D  ,  F  ,  G  ,  H  ,  J  ,  K  ,  L  , SCLN, QUOT, ENT ,
+           LSFT,  Z  ,  X  ,  C  ,  V  ,  B  ,  N  ,  M  , COMM, DOT , SLSH, RSFT, MHKB,
+           LCTL, LGUI, LALT, BSPC, LNAV, SPC , RALT, MMCR, MD60, RCTL),
 
     /* Layer HHKB: HHKB mode (HHKB Fn) */
     /* ,-----------------------------------------------------------.
