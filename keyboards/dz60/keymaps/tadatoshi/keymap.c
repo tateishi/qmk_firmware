@@ -45,16 +45,17 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
+    /* Layer Base: ANSI mode (HHKB Layout) */
     /* ,-----------------------------------------------------------.
-     * |Esc|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|  `|
+     * |Esc| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | - | = | \ | ` |
      * |-----------------------------------------------------------|
-     * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Bspc |
+     * | Tab | Q | W | E | R | T | Y | U | I | O | P | [ | ] |Backs|
      * |-----------------------------------------------------------|
-     * |Contro|  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '| Enter  |
+     * | Ctrl | A | S | D | F | G | H | J | K | L | ; | ' | Enter  |
      * |-----------------------------------------------------------|
-     * |LShift  |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|RShift|Fn1|
+     * | LShift | Z | X | C | V | B | N | M | , | . | / |RShift|Fn1|
      * |-----------------------------------------------------------'
-     * |FN  |Gui |Alt  |BackSP |FN |Space      |Alt |Gui |FN  |CTRL|
+     * | Fn |Gui |Alt | BackSP | Fn |   Space  |Alt |Gui | FN |Ctrl|
      * `-----------------------------------------------------------'
      */
     [BASE] = KC_KEYMAP_T(
@@ -64,61 +65,62 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LSFT,  Z  ,  X  ,  C  ,  V  ,  B  ,  N  ,  M  , COMM, DOT , SLSH, RSFT, MHKB,
            LCTL, LGUI, LALT, BSPC, LNAV, SPC , RALT, MMCR, MD60, RCTL),
 
+
     /* Layer HHKB: HHKB mode (HHKB Fn) */
     /* ,-----------------------------------------------------------.
-     * |Pwr| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
+     * |Pwr|F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
-     * |Caps |   |   |   |   |   |   |   |Psc|Slk|Pus| Up|   |Backs|
+     * |Caps |   |   |   |   |   |   |   |Psc|Slk|Pus|Up |   |Backs|
      * |-----------------------------------------------------------|
-     * |      |VoD|VoU|Mut|   |   |  *|  /|Hom|PgU|Lef|Rig| Enter  |
+     * |      |VoD|VoU|Mut|   |   | * | / |Hom|PgU|Lef|Rig| Enter  |
      * |-----------------------------------------------------------|
-     * |        |   |   |   |   |   |  +|  -|End|PgD|Dow|      |   |
+     * |        |   |   |   |   |   | + | - |End|PgD|Dow|      |   |
      * |-----------------------------------------------------------|
-     * |    |    |     |       |   |           |    |    |    |    |
+     * |    |    |    |        |    |          |    |    |    |    |
      * `-----------------------------------------------------------'
      */
+    [HHKB] = KC_KEYMAP_T(
+           PWR , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , DEL ,
+           CAPS, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, PSCR, SLCK, PAUS, UP  , xxxx, BSPC,
+           xxxx, VOLD, VOLU, MUTE, xxxx, xxxx, PAST, PSLS, HOME, PGUP, LEFT, RGHT, PENT,
+           xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, PPLS, PMNS, END , PGDN, DOWN, xxxx, xxxx,
+           xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx),
 
-  [HHKB] = KC_KEYMAP_T(
-         PWR , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , DEL ,
-         CAPS, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, PSCR, SLCK, PAUS, UP  , xxxx, BSPC,
-         xxxx, VOLD, VOLU, MUTE, xxxx, xxxx, PAST, PSLS, HOME, PGUP, LEFT, RGHT, PENT,
-         xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, PPLS, PMNS, END , PGDN, DOWN, xxxx, xxxx,
-         xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx),
 
     /* Layer NAVI: NAVI mode (Center Fn) */
     /* ,-----------------------------------------------------------.
-     * |ESC| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
+     * |ESC|F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
      * |     |MwL|McU|MwR|MwU|   |   |Hom|PgU|End|   |   |   |     |
      * |-----------------------------------------------------------|
-     * |      |McL|McD|McR|MwD|   |Lef|Dwn| Up|Rig|WBK|WFD|        |
+     * |      |McL|McD|McR|MwD|   |Lef|Dwn|Up |Rig|WBK|WFD|        |
      * |-----------------------------------------------------------|
      * |     Mb5|Mb4|Mb3|Mb2|Mb1|   |Nwn|Pwn|PgD|Ntb|Ptb|      |   |
      * |-----------------------------------------------------------|
-     * |    |    |     |       |   |           |    |    |    |    |
+     * |    |    |    |        |    |          |    |    |    |    |
      * `-----------------------------------------------------------'
      */
+    [NAVI] = KC_KEYMAP_T(
+           ESC , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , DEL ,
+           xxxx, WH_L, MS_U, WH_R, WH_U, xxxx, xxxx, HOME, PGUP, END , xxxx, xxxx, xxxx, xxxx,
+           xxxx, MS_L, MS_D, MS_R, WH_D, xxxx, LEFT, DOWN, UP  , RGHT, WBAK, WFWD, xxxx,
+           BTN5, BTN4, BTN3, BTN2, BTN1, xxxx, LATB, SATB, PGDN, SCTB, LCTB, xxxx, xxxx,
+           xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx),
 
-  [NAVI] = KC_KEYMAP_T(
-         ESC , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , DEL ,
-         xxxx, WH_L, MS_U, WH_R, WH_U, xxxx, xxxx, HOME, PGUP, END , xxxx, xxxx, xxxx, xxxx,
-         xxxx, MS_L, MS_D, MS_R, WH_D, xxxx, LEFT, DOWN, UP  , RGHT, WBAK, WFWD, xxxx,
-         BTN5, BTN4, BTN3, BTN2, BTN1, xxxx, LATB, SATB, PGDN, SCTB, LCTB, xxxx, xxxx,
-         xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx),
 
+    /* Layer DZ60: Dz60 mode (Right Fn) */
     /* ,-----------------------------------------------------------.
-     * |  `| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Bsp|
+     * | ` |F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Ins|Bsp|
      * |-----------------------------------------------------------|
-     * |     |TOG|MOD|HUI|HUD|SAI|SAD|VAI|VAD|   |  | Up|   | RST  |
+     * |     |TOG|MOD|HUI|HUD|SAI|SAD|VAI|VAD|   |  |Up |   |Reset |
      * |-----------------------------------------------------------|
      * |      |   |M_P|   |   |   |   |   |Hom|PgU|Lft|Rgt|        |
      * |-----------------------------------------------------------|
      * |        |   |   |   |DEC|TOG|INC|STP|End|PgD|Dwn|      |   |
      * |-----------------------------------------------------------'
-     * |    |    |     |       |   |           |    |    |    |    |
+     * |    |    |    |        |    |          |    |    |    |    |
      * `-----------------------------------------------------------'
      */
-
     [DZ60] = KC_KEYMAP_T(
            ESC , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , BSPC,
            ____, RTOG, RMOD, RHUI, RHUD, RSAI, RSAD, RVAI, RVAD, ____, ____, UP  , ____, RST ,
@@ -126,6 +128,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            ____,    ____,    ____, BDEC, BTOG, BINC, BSTP, ____, END , PGDN, DOWN, ____, ____,
            ____,    ____,    ____, ____, ____, ____, ____, ____, ____, ____),
 
+
+    /* Layer MACR: Macro mode (Right SUPER) */
     /* ,-----------------------------------------------------------.
      * |   |M01|M02|M03|M04|M05|M06|M07|M08|M09|M10|M11|M12|   |   |
      * |-----------------------------------------------------------|
@@ -135,10 +139,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |        |   |   |   |   |   |   |   |   |   |   |      |   |
      * |-----------------------------------------------------------'
-     * |    |    |     |       |   |           |    |    |    |    |
+     * |    |    |    |        |    |          |    |    |    |    |
      * `-----------------------------------------------------------'
      */
-
     [MACR] = KEYMAP_T(
            ____, M(1), M(2), M(3), M(4), M(5), M(6), M(7), M(8), M(9),M(10),M(11),M(12), ____, ____,
            ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
