@@ -43,6 +43,12 @@
 #define KC_SCTB S(LCTL(KC_TAB))
 #define KC_LCTB LCTL(KC_TAB)
 
+enum custom_keycodes {
+    MY_CUSTOM_MACRO = SAFE_RANGE
+};
+
+#define KC_CM01 MY_CUSTOM_MACRO
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Layer Base: ANSI mode (HHKB Layout) */
@@ -182,4 +188,16 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
         }
         break;
     }
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        switch (keycode) {
+            case MY_CUSTOM_MACRO:
+                SEND_STRING("QMK is best thing ever!");
+                return false;
+        }
+    }
+
+    return true;
 }
