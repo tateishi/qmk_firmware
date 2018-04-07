@@ -99,19 +99,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |     |MwL|McU|MwR|MwU|   |   |Hom|PgU|End|   |   |   |     |
      * |-----------------------------------------------------------|
-     * |      |McL|McD|McR|MwD|   |Lef|Dwn|Up |Rig|WBK|WFD|        |
+     * | Ctrl |McL|McD|McR|MwD|   |Lef|Dwn|Up |Rig|WBK|WFD|        |
      * |-----------------------------------------------------------|
-     * |     Mb5|Mb4|Mb3|Mb2|Mb1|   |Nwn|Pwn|PgD|Ntb|Ptb|      |   |
+     * | LShift |Mb4|Mb3|Mb2|Mb1|Mb5|Nwn|Pwn|PgD|Ntb|Ptb|RShift|   |
      * |-----------------------------------------------------------|
-     * |    |    |    |        |    |          |    |    |    |    |
+     * |    |Gui |Alt |        |    |          |Alt |Gui |    |Ctrl|
      * `-----------------------------------------------------------'
      */
     [NAVI] = KC_KEYMAP_T(
            ESC , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , DEL ,
            xxxx, WH_L, MS_U, WH_R, WH_U, xxxx, xxxx, HOME, PGUP, END , xxxx, xxxx, xxxx, xxxx,
-           xxxx, MS_L, MS_D, MS_R, WH_D, xxxx, LEFT, DOWN, UP  , RGHT, WBAK, WFWD, xxxx,
-           BTN5, BTN4, BTN3, BTN2, BTN1, xxxx, LATB, SATB, PGDN, SCTB, LCTB, xxxx, xxxx,
-           xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx),
+           ____, MS_L, MS_D, MS_R, WH_D, xxxx, LEFT, DOWN, UP  , RGHT, WBAK, WFWD, xxxx,
+           ____, BTN4, BTN3, BTN2, BTN1, BTN5, LATB, SATB, PGDN, SCTB, LCTB, ____, xxxx,
+           xxxx, ____, ____, xxxx, xxxx, xxxx, ____, ____, xxxx, ____),
 
 
     /* Layer DZ60: Dz60 mode (Right Fn) */
