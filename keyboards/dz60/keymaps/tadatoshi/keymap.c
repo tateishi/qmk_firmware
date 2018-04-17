@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * | Fn |Gui |Alt | BackSP | Fn |   Space  |Alt |Gui | FN |Ctrl|
      * `-----------------------------------------------------------'
      */
-    [BASE] = KC_KEYMAP_T(
+    [BASE] = KC_LAYOUT_T(
            GESC,  1  ,  2  ,  3  ,  4  ,  5  ,  6  ,  7  ,  8  ,  9  ,  0  , MINS, EQL , BSLS, GRV ,
            TAB ,  Q  ,  W  ,  E  ,  R  ,  T  ,  Y  ,  U  ,  I  ,  O  ,  P  , LBRC, RBRC, BSPC,
            CESC,  A  ,  S  ,  D  ,  F  ,  G  ,  H  ,  J  ,  K  ,  L  , SCLN, QUOT, ENT ,
@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |    |    |    |        |    |          |    |    |    |    |
      * `-----------------------------------------------------------'
      */
-    [HHKB] = KC_KEYMAP_T(
+    [HHKB] = KC_LAYOUT_T(
            PWR , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , DEL ,
            CAPS, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, PSCR, SLCK, PAUS, UP  , xxxx, BSPC,
            xxxx, VOLD, VOLU, MUTE, xxxx, xxxx, PAST, PSLS, HOME, PGUP, LEFT, RGHT, PENT,
@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |LCtl|Gui |Alt |  F13   |    |    F14   |Alt |Gui |App |Ctrl|
      * `-----------------------------------------------------------'
      */
-    [NAVI] = KC_KEYMAP_T(
+    [NAVI] = KC_LAYOUT_T(
            ESC , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , DEL ,
            xxxx, WH_L, MS_U, WH_R, WH_U, xxxx, xxxx, HOME, PGUP, END , xxxx, xxxx, xxxx, xxxx,
            ____, MS_L, MS_D, MS_R, WH_D, xxxx, LEFT, DOWN, UP  , RGHT, WBAK, WFWD, xxxx,
@@ -127,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |    |    |    |        |    |          |    |    |    |    |
      * `-----------------------------------------------------------'
      */
-    [DZ60] = KC_KEYMAP_T(
+    [DZ60] = KC_LAYOUT_T(
            ESC , F1  , F2  , F3  , F4  , F5  , F6  , F7  , F8  , F9  , F10 , F11 , F12 , INS , BSPC,
            ____, RTOG, RMOD, RHUI, RHUD, RSAI, RSAD, RVAI, RVAD, ____, ____, UP  , ____, RST ,
            ____,    ____,    RM_P, ____, ____, ____, ____, ____, HOME, PGUP, LEFT, RGHT, ____,
@@ -148,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |    |    |    |        |    |          |    |    |    |    |
      * `-----------------------------------------------------------'
      */
-    [MACR] = KEYMAP_T(
+    [MACR] = LAYOUT_T(
            ____, M(1), M(2), M(3), M(4), M(5), M(6), M(7), M(8), M(9),M(10),M(11),M(12), ____, ____,
            ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
            ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
