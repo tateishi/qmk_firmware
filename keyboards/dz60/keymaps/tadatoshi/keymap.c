@@ -82,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |        |   |   |   |   |   | + | - |End|PgD|Dow|      |   |
      * |-----------------------------------------------------------|
-     * |    |    |    |        |    |          |    |    |    |    |
+     * |    |    |    |  DEL   |    |          |    |    |    |    |
      * `-----------------------------------------------------------'
      */
     [HHKB] = KC_LAYOUT_T(
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            CAPS, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, PSCR, SLCK, PAUS, UP  , xxxx, BSPC,
            xxxx, VOLD, VOLU, MUTE, xxxx, xxxx, PAST, PSLS, HOME, PGUP, LEFT, RGHT, PENT,
            xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, PPLS, PMNS, END , PGDN, DOWN, xxxx, xxxx,
-           xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx, xxxx),
+           xxxx, xxxx, xxxx, DEL , xxxx, xxxx, xxxx, xxxx, xxxx, xxxx),
 
 
     /* Layer NAVI: NAVI mode (Center Fn) */
