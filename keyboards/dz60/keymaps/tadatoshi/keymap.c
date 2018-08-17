@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            TAB ,  Q  ,  W  ,  E  ,  R  ,  T  ,  Y  ,  U  ,  I  ,  O  ,  P  , LBRC, RBRC, BSPC,
            CESC,  A  ,  S  ,  D  ,  F  ,  G  ,  H  ,  J  ,  K  ,  L  , SCLN, QUOT, ENT ,
            LSFT,  Z  ,  X  ,  C  ,  V  ,  B  ,  N  ,  M  , COMM, DOT , SLSH, RSFT, MHKB,
-           LCTL, LALT, LGUI, BSPC, LNAV, SPC , RALT, MMCR, MD60, RCTL),
+           LCTL, LALT, LGUI, BSPC, LNAV, SPC , RALT, RGUI, MD60, RCTL),
 
 
     /* Layer HHKB: HHKB mode (HHKB Fn) */
